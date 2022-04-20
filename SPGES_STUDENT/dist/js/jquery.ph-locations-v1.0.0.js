@@ -1,0 +1,1 @@
+{"api_name":"Philippines Location API","api_version":"v1.0.1","resources":[{"region":"http://127.0.0.1:3344/v1/regions"},{"province":"http://127.0.0.1:3344/v1/provinces"},{"cities":"http://127.0.0.1:3344/v1/cities"},{"barangays":"http://127.0.0.1:3344/v1/barangays"}]}
