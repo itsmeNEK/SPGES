@@ -1,6 +1,7 @@
 
 								<?php
 									require("conn.php");
+									require("caesarC.php");
 
 
 
@@ -11,10 +12,10 @@
 									if(mysqli_num_rows($result) > 0 ){
 										while($row = mysqli_fetch_array($result)){
 											$studID 		= $row['studID'];
-											$lname 			= strtoupper($row['lastName']);
-											$fname 			= strtoupper($row['firstName']);
-											$mname 			= strtoupper($row['middleName']);
-											$extname 		= strtoupper($row['extName']);
+											$lname 			= encipher(strtoupper($row['lastName']),13);
+											$fname 			=  encipher(strtoupper($row['firstName']),13);
+											$mname 			=  encipher(strtoupper($row['middleName']),13);
+											$extname 		=  encipher(strtoupper($row['extName']),13);
 											$email			= $row['emailAdd'];
 											$maddress		= strtoupper($row['mailingAdd']);
 											$mzip 			= $row['mzipcode'];

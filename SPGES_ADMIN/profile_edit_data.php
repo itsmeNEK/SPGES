@@ -120,14 +120,15 @@
 
 													<?php
 														require "conn.php";
+														require("caesarC.php");
 
 														$result = mysqli_query($conn,"SELECT * FROM tbl_stdprofile WHERE `studID` = '$studNo'");
 															if(mysqli_num_rows($result) > 0){
 																while($row = mysqli_fetch_array($result)){
-																	$fName			= $row['firstName'];
-																	$lName 			= $row['lastName'];
-																	$mName			= $row['middleName'];
-																	$extName		= $row['extName'];
+																	$lName 	= Encipher($row['lastName'],13);
+																	$fName 	= Encipher($row['firstName'],13);
+																	$mName 	= Encipher($row['middleName'],13);
+																	$extName 	= Encipher($row['extName'],13);
 																	$address		= $row['mailingAdd'];
 																	$zip				= $row['mzipcode'];
 																	$country		= $row['mcountry'];

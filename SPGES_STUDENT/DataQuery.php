@@ -1,14 +1,15 @@
 <?php
 	require("conn.php");
+	require("caesarC.php");
 
 	$mode = $_POST['mode'];
 
 	if($mode == "NewRegister"){
 		$studNo 	= $_REQUEST['studNo'];
-		$lName 		= $_REQUEST['lName'];
-		$fName 		= $_REQUEST['fName'];
-		$mName 		= $_REQUEST['mName'];
-		$extName 	= $_REQUEST['extName'];
+		$lName 		= encipher($_REQUEST['lName'],13);
+		$fName 		= encipher($_REQUEST['fName'],13);
+		$mName 		= encipher($_REQUEST['mName'],13);
+		$extName 	= encipher($_REQUEST['extName'],13);
 		$street		= $_REQUEST['street'];
 		$brgy			= $_REQUEST['brgy'];
 		$city 		= $_REQUEST['city'];
@@ -217,9 +218,10 @@
 		}
 	}else if ($mode == "EditProfile") {
 		$studNo 	= $_REQUEST['studNo'];
-		$lName 		= $_REQUEST['lName'];
-		$fName 		= $_REQUEST['fName'];
-		$mName 		= $_REQUEST['mName'];
+		$lName 		= encipher($_REQUEST['lName'],13);
+		$fName 		= encipher($_REQUEST['fName'],13);
+		$mName 		= encipher($_REQUEST['mName'],13);
+		$extName 	= encipher($_REQUEST['extName'],13);
 		$extName 	= $_REQUEST['extName'];
 		$street		= $_REQUEST['street'];
 		$zip 			= $_REQUEST['zip'];

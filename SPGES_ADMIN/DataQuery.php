@@ -1,5 +1,6 @@
 <?php
 	require("conn.php");
+	require("caesarC.php");
 
 	$mode = $_REQUEST['mode'];
 
@@ -101,8 +102,8 @@
 				echo 0;
 			};
 	}else if ($mode == "AddNewUser"){
-		$AFName = $_REQUEST['AFName'];
-		$ALName = $_REQUEST['ALName'];
+		$AFName = encipher($_REQUEST['AFName'],13);
+		$ALName = encipher($_REQUEST['ALName'],13);
 		$AUName = $_REQUEST['AUName'];
 		$APass	= password_hash($_REQUEST['APass'], PASSWORD_DEFAULT);
 
@@ -114,8 +115,8 @@
 			};
 	}else if ($mode == "EditUser"){
 		$EUserID 	= $_REQUEST['EUserID'];
-		$EFname		= $_REQUEST['EFname'];
-		$ELname 	= $_REQUEST['ELname'];
+		$EFname		=  encipher($_REQUEST['EFname'],13);
+		$ELname 	= encipher($_REQUEST['ELname'],13);
 		$EUname 	= $_REQUEST['EUname'];
 		$EPass 		= $_REQUEST['EPass'];
 
@@ -222,10 +223,10 @@
 			}
 	}else if($mode == "NewRegister"){
 		$studNo 	= $_REQUEST['studNo'];
-		$lName 		= $_REQUEST['lName'];
-		$fName 		= $_REQUEST['fName'];
-		$mName 		= $_REQUEST['mName'];
-		$extName 	= $_REQUEST['extName'];
+		$lName 		= encipher($_REQUEST['lName'],13);
+		$fName 		= encipher($_REQUEST['fName'],13);
+		$mName 		= encipher($_REQUEST['mName'],13);
+		$extName 	= encipher($_REQUEST['extName'],13);
 		$street		= $_REQUEST['street'];
 		$brgy			= $_REQUEST['brgy'];
 		$city 		= $_REQUEST['city'];
@@ -418,10 +419,10 @@
 			}
 	}else if ($mode == "EditProfile") {
 		$studNo 	= $_REQUEST['studNo'];
-		$lName 		= $_REQUEST['lName'];
-		$fName 		= $_REQUEST['fName'];
-		$mName 		= $_REQUEST['mName'];
-		$extName 	= $_REQUEST['extName'];
+		$lName 		= encipher($_REQUEST['lName'],13);
+		$fName 		= encipher($_REQUEST['fName'],13);
+		$mName 		= encipher($_REQUEST['mName'],13);
+		$extName 	= encipher($_REQUEST['extName'],13);
 		$street		= $_REQUEST['street'];
 		$zip 			= $_REQUEST['zip'];
 		$count 		= $_REQUEST['count'];

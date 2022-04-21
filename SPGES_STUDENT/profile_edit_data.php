@@ -122,6 +122,7 @@
 
 													<?php
 														require "conn.php";
+														require("caesarC.php");
 
 														$result = mysqli_query($conn,"SELECT * FROM tbl_stdprofile WHERE `studID` = '$studNo'");
 															if(mysqli_num_rows($result) > 0){
@@ -155,16 +156,16 @@
 											<tr style="font-size:15px;">
 												<td style="vertical-align: middle;"><i>Full Legal Name:</i></td>
 												<td align="center">
-													<input type="text" name="txtlName" class="form-control form-control-sm pdata" id="txtlName" value="<?php echo $lName; ?>" disabled>
+													<input type="text" name="txtlName" class="form-control form-control-sm pdata" id="txtlName" value="<?php echo encipher($lName,13); ?>" disabled>
 												</td>
 												<td  align='center'>
-													<input type="text" name="txtfName"  class="form-control  form-control-sm pdata" id="txtfName" value="<?php echo $fName; ?>" disabled>
+													<input type="text" name="txtfName"  class="form-control  form-control-sm pdata" id="txtfName" value="<?php echo encipher($fName,13); ?>" disabled>
 												</td>
 												<td  align='center'>
-													<input type="text" name="txtmName" class="form-control  form-control-sm pdata" id="txtmName" value="<?php echo $mName; ?>" disabled>
+													<input type="text" name="txtmName" class="form-control  form-control-sm pdata" id="txtmName" value="<?php echo encipher($mName,13); ?>" disabled>
 												</td>
 												<td align='center' width="15%">
-													<input type="text" name="txtextName" class="form-control  form-control-sm pdata" id="txtextName" value="<?php echo $extName; ?>" disabled>
+													<input type="text" name="txtextName" class="form-control  form-control-sm pdata" id="txtextName" value="<?php echo encipher($extName,13); ?>" disabled>
 												</td>
 											</tr>
 

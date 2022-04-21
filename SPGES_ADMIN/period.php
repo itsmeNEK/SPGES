@@ -2,6 +2,7 @@
 	<html lang="en">
 		<?php
 			include 'session.php';
+			require("caesarC.php");
 		?>
 		<head>
 			<meta charset="utf-8">

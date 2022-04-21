@@ -3,6 +3,7 @@
 		<head>
 			<?php
 				include 'session.php';
+				require("caesarC.php");
 			?>
 			<meta charset="utf-8">
 			<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -34,7 +35,7 @@
 						<ul class="navbar-nav ml-auto">
 								<li class="nav-item">
 									<a class="nav-link" style="color:white" href="#">
-									<?php echo $fName;?>
+								<?php echo encipher($fName,13);?>
 									</a>
 								</li>
 								<li class="nav-item dropdown">
@@ -45,23 +46,12 @@
 									<div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
 										<a href="#" class="dropdown-item">
 											<div class="media">
-												<?php
-													require("conn.php");
-
-													$result = mysqli_query($conn, "SELECT * from   tbl_stdprofile WHERE `studID` = '$studNo' ");
-
-													if(mysqli_num_rows($result) > 0 ){
-														while($row = mysqli_fetch_array($result)){
-															$pic				= $row['piclink'];
-														}
-													}
-												?>
-												<img src="/SPGES/SPGES_ADMIN/idpic/<?php echo $pic?>" alt="User Avatar" class="img-size-50 mr-3 img-circle">
+											<img src="dist/logo.png" alt="User Avatar" class="img-size-50 mr-3 img-circle">
 												<div class="media-body">
 													<h3 class="dropdown-item-title">
 														Welcome
 													</h3>
-													<p class="text-sm"><?php echo $fName;?></p>
+												<p class="text-sm"><?php echo encipher($fName,13);?></p>
 													<p class="text-sm text-muted"><i class="far fa-clock mr-1"></i>
 														<?php
 															echo  date("Y/m/d");

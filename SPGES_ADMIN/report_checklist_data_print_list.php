@@ -113,6 +113,7 @@
 	<tbody>
 		<?php
 			require('conn.php');
+			require("caesarC.php");
 
 
 			if($filter_sy == "All" and $filter_sem == "All"){
@@ -135,10 +136,10 @@
 						while($row = mysqli_fetch_array($result)){
 							$id 		= $row['recID'];
 							$curID 	= $row['curriculumID'];
-							$lName 	= $row['lastName'];
-							$fName 	= $row['firstName'];
-							$mName 	= $row['middleName'];
-							$ext 		= $row['extName'];
+							$lName 	= Encipher($row['lastName'],13);
+							$fName 	= Encipher($row['firstName'],13);
+							$mName 	= Encipher($row['middleName'],13);
+							$ext 	= Encipher($row['extName'],13);
 							$cur 		= $row['curriculum'];
 							$sy 		= $row['schoolyear'];
 							$email 	= $row['emailAdd'];
@@ -182,10 +183,10 @@
 						while($row = mysqli_fetch_array($result)){
 							$id 		= $row['recID'];
 							$curID 	= $row['curriculumID'];
-							$lName 	= $row['lastName'];
-							$fName 	= $row['firstName'];
-							$mName 	= $row['middleName'];
-							$ext 		= $row['extName'];
+							$lName 	= Encipher($row['lastName'],13);
+							$fName 	= Encipher($row['firstName'],13);
+							$mName 	= Encipher($row['middleName'],13);
+							$ext 	= Encipher($row['extName'],13);
 							$cur 		= $row['curriculum'];
 							$sy 		= $row['schoolyear'];
 							$email 	= $row['emailAdd'];
@@ -229,10 +230,10 @@
 						while($row = mysqli_fetch_array($result)){
 							$id 		= $row['recID'];
 							$curID 	= $row['curriculumID'];
-							$lName 	= $row['lastName'];
-							$fName 	= $row['firstName'];
-							$mName 	= $row['middleName'];
-							$ext 		= $row['extName'];
+							$lName 	= Encipher($row['lastName'],13);
+							$fName 	= Encipher($row['firstName'],13);
+							$mName 	= Encipher($row['middleName'],13);
+							$ext 	= Encipher($row['extName'],13);
 							$cur 		= $row['curriculum'];
 							$sy 		= $row['schoolyear'];
 							$email 	= $row['emailAdd'];
@@ -276,10 +277,10 @@
 						while($row = mysqli_fetch_array($result)){
 							$id 		= $row['recID'];
 							$curID 	= $row['curriculumID'];
-							$lName 	= $row['lastName'];
-							$fName 	= $row['firstName'];
-							$mName 	= $row['middleName'];
-							$ext 		= $row['extName'];
+							$lName 	= Encipher($row['lastName'],13);
+							$fName 	= Encipher($row['firstName'],13);
+							$mName 	= Encipher($row['middleName'],13);
+							$ext 	= Encipher($row['extName'],13);
 							$cur 		= $row['curriculum'];
 							$sy 		= $row['schoolyear'];
 							$email 	= $row['emailAdd'];

@@ -15,6 +15,7 @@
 	<tbody>
 		<?php
 			require('conn.php');
+			require("caesarC.php");
 
 			$result = mysqli_query($conn, "SELECT * from tbl_stdprofile ORDER BY lastName ASC, semester ASC, schoolyear DESC");
 				$i = 1;
@@ -23,7 +24,7 @@
 					while($row = mysqli_fetch_array($result)){
 						$recID 		= $row['recID'];
 						$id 			= $row['studID'];
-						$fullname = $row['lastName'] .', '. $row['firstName'] .' '. $row['middleName'] .' '. $row['extName'];
+						$fullname =  Decipher($row['lastName'],13) .', '. Decipher($row['firstName'],13) .' '. Decipher($row['middleName'],13) .' '. Decipher($row['extName'],13);
 						$sex 			= $row['Sex'];
 						$bday			= $row['dateofBirth'];
 						$citi			= $row['Citizenship'];

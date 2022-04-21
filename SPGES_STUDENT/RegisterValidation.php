@@ -2,10 +2,10 @@
 
 	require("caesarC.php");
 
-	$uname = encipher($_REQUEST['uname'],13);
+	$uname = $_REQUEST['uname'];
 	$upass = password_hash($_REQUEST['upass'], PASSWORD_DEFAULT);
 	$name  =  encipher($_REQUEST['name'],13);
-	$stud  =  encipher($_REQUEST['stud'],13);
+	$stud  =  $_REQUEST['stud'];
 
 
 	require("conn.php");

@@ -3,6 +3,7 @@
 		<head>
 			<?php
 				include 'session.php';
+				require("caesarC.php");
 			?>
 			<meta charset="utf-8">
 			<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -32,7 +33,7 @@
 						<ul class="navbar-nav ml-auto">
 								<li class="nav-item">
 									<a class="nav-link" style="color:white" href="#">
-									<?php echo $fName;?>
+								<?php echo encipher($fName,13);?>
 									</a>
 								</li>
 								<li class="nav-item dropdown">
@@ -48,7 +49,7 @@
 													<h3 class="dropdown-item-title">
 														Welcome
 													</h3>
-													<p class="text-sm"><?php echo $fName;?></p>
+												<p class="text-sm"><?php echo encipher($fName,13);?></p>
 													<p class="text-sm text-muted"><i class="far fa-clock mr-1"></i>
 														<?php
 															echo  date("Y/m/d");
@@ -142,7 +143,7 @@
 
 														if(mysqli_num_rows($Result) > 0){
 															while($row = mysqli_fetch_array($Result)){
-																$stud_name = $row['lastName'] .', '. $row['firstName'] .' '. $row['middleName'] .' '. $row['extName'];
+																$stud_name = encipher($row['lastName'],13) .', '.  encipher($row['firstName'],13) .' '. encipher($row['middleName'],13) .' '. encipher($row['extName'],13) ;
 																$studNo 	 = $row['studID'];
 															}
 														}else{

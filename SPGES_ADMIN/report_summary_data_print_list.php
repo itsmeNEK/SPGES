@@ -125,16 +125,17 @@
 	<tbody>
 		<?php
 			require('conn.php');
+			require("caesarC.php");
 			if($filter_sy == "All" and $filter_sem == "All"){
 				$result = mysqli_query($conn, "SELECT * FROM tbl_stdprofile	ORDER BY lastName ASC, semester ASC,  schoolyear DESC");
 				$i = 1;
 					if(mysqli_num_rows($result) > 0 ){
 						while($row = mysqli_fetch_array($result)){
 							$id 		= $row['recID'];
-							$lName 	= $row['lastName'];
-							$fName 	= $row['firstName'];
-							$mName 	= $row['middleName'];
-							$ext 		= $row['extName'];
+							$lName 	= Encipher($row['lastName'],13);
+							$fName 	= Encipher($row['firstName'],13);
+							$mName 	= Encipher($row['middleName'],13);
+							$ext 	= Encipher($row['extName'],13);
 							$sy 		= $row['schoolyear'];
 							$sex 		= $row['Sex'];
 							$sem		= $row['semester'];
@@ -163,10 +164,10 @@
 				if(mysqli_num_rows($result) > 0 ){
 					while($row = mysqli_fetch_array($result)){
 						$id 		= $row['recID'];
-						$lName 	= $row['lastName'];
-						$fName 	= $row['firstName'];
-						$mName 	= $row['middleName'];
-						$ext 		= $row['extName'];
+						$lName 	= Encipher($row['lastName'],13);
+						$fName 	= Encipher($row['firstName'],13);
+						$mName 	= Encipher($row['middleName'],13);
+						$ext 	= Encipher($row['extName'],13);
 						$sy 		= $row['schoolyear'];
 						$sex 		= $row['Sex'];
 						$sem		= $row['semester'];
@@ -195,10 +196,10 @@
 				if(mysqli_num_rows($result) > 0 ){
 					while($row = mysqli_fetch_array($result)){
 						$id 		= $row['recID'];
-						$lName 	= $row['lastName'];
-						$fName 	= $row['firstName'];
-						$mName 	= $row['middleName'];
-						$ext 		= $row['extName'];
+						$lName 	= Encipher($row['lastName'],13);
+						$fName 	= Encipher($row['firstName'],13);
+						$mName 	= Encipher($row['middleName'],13);
+						$ext 	= Encipher($row['extName'],13);
 						$sy 		= $row['schoolyear'];
 						$sex 		= $row['Sex'];
 						$sem		= $row['semester'];
@@ -227,10 +228,10 @@
 				if(mysqli_num_rows($result) > 0 ){
 					while($row = mysqli_fetch_array($result)){
 						$id 		= $row['recID'];
-						$lName 	= $row['lastName'];
-						$fName 	= $row['firstName'];
-						$mName 	= $row['middleName'];
-						$ext 		= $row['extName'];
+						$lName 	= Encipher($row['lastName'],13);
+						$fName 	= Encipher($row['firstName'],13);
+						$mName 	= Encipher($row['middleName'],13);
+						$ext 	= Encipher($row['extName'],13);
 						$sy 		= $row['schoolyear'];
 						$sex 		= $row['Sex'];
 						$sem		= $row['semester'];

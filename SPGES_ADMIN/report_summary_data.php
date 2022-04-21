@@ -15,6 +15,7 @@
 	<tbody>
 		<?php
 			require('conn.php');
+			require("caesarC.php");
 
 			$filter_sy  = $_REQUEST['filter_sy'];
 			$filter_sem = $_REQUEST['filter_sem'];
@@ -25,10 +26,10 @@
 					if(mysqli_num_rows($result) > 0 ){
 						while($row = mysqli_fetch_array($result)){
 							$id 		= $row['recID'];
-							$lName 	= $row['lastName'];
-							$fName 	= $row['firstName'];
-							$mName 	= $row['middleName'];
-							$ext 		= $row['extName'];
+							$lName 	= Encipher($row['lastName'],13);
+							$fName 	= Encipher($row['firstName'],13);
+							$mName 	= Encipher($row['middleName'],13);
+							$ext 	= Encipher($row['extName'],13);
 							$sy 		= $row['schoolyear'];
 							$sex 		= $row['Sex'];
 							$sem		= $row['semester'];
@@ -57,10 +58,10 @@
 				if(mysqli_num_rows($result) > 0 ){
 					while($row = mysqli_fetch_array($result)){
 						$id 		= $row['recID'];
-						$lName 	= $row['lastName'];
-						$fName 	= $row['firstName'];
-						$mName 	= $row['middleName'];
-						$ext 		= $row['extName'];
+						$lName 	= Encipher($row['lastName'],13);
+						$fName 	= Encipher($row['firstName'],13);
+						$mName 	= Encipher($row['middleName'],13);
+						$ext 	= Encipher($row['extName'],13);
 						$sy 		= $row['schoolyear'];
 						$sex 		= $row['Sex'];
 						$sem		= $row['semester'];
@@ -89,10 +90,10 @@
 				if(mysqli_num_rows($result) > 0 ){
 					while($row = mysqli_fetch_array($result)){
 						$id 		= $row['recID'];
-						$lName 	= $row['lastName'];
-						$fName 	= $row['firstName'];
-						$mName 	= $row['middleName'];
-						$ext 		= $row['extName'];
+						$lName 	= Encipher($row['lastName'],13);
+						$fName 	= Encipher($row['firstName'],13);
+						$mName 	= Encipher($row['middleName'],13);
+						$ext 	= Encipher($row['extName'],13);
 						$sy 		= $row['schoolyear'];
 						$sex 		= $row['Sex'];
 						$sem		= $row['semester'];
@@ -121,9 +122,10 @@
 				if(mysqli_num_rows($result) > 0 ){
 					while($row = mysqli_fetch_array($result)){
 						$id 		= $row['recID'];
-						$lName 	= $row['lastName'];
-						$fName 	= $row['firstName'];
-						$mName 	= $row['middleName'];
+						$lName 	= Encipher($row['lastName'],13);
+						$fName 	= Encipher($row['firstName'],13);
+						$mName 	= Encipher($row['middleName'],13);
+						$ext 	= Encipher($row['extName'],13);
 						$ext 		= $row['extName'];
 						$sy 		= $row['schoolyear'];
 						$sex 		= $row['Sex'];
